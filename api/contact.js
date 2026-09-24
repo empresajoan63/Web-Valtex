@@ -12,7 +12,10 @@ const clean = (v, max) => String(v || "").trim().slice(0, max);
 module.exports = async (req, res) => {
   if (req.method !== "POST") return res.status(405).json({ ok: false, error: "method" });
 
-  const body = typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
+  let body = req.body || {};
+  if (typeof body === "string") {
+    try { body = JSON.parse(body || "{}"); } catch { return res.status(400).json({ ok: false, error: "invalid" }); }
+  }
 
   // Campo trampa: los humanos no lo ven, los bots lo rellenan
   if (body.website) return res.status(200).json({ ok: true });

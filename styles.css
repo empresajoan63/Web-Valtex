@@ -189,10 +189,9 @@ em { font-style: normal; }
 .hero-visual { position: relative; max-width: 640px; margin: 90px auto 0; perspective: 1200px; }
 .window {
   position: relative; text-align: left; border-radius: var(--radius); overflow: hidden;
-  background: linear-gradient(rgba(12, 12, 21, 0.9), rgba(12, 12, 21, 0.9)) padding-box, var(--grad) border-box;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--grad) border-box;
   border: 1px solid transparent;
   box-shadow: 0 40px 120px -20px rgba(181, 107, 255, 0.45), 0 0 80px -30px rgba(25, 230, 212, 0.5);
-  backdrop-filter: blur(20px);
 }
 .window-bar { display: flex; align-items: center; gap: 0.45rem; padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
 .window-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-2); }
@@ -538,7 +537,6 @@ ul.list-x, ul.list-check { list-style: none; display: grid; gap: 0.9rem; }
   .nav-links.open { opacity: 1; transform: none; pointer-events: auto; }
   .nav-links a { padding: 0.9rem 1rem; font-size: 1rem; }
   .nav-toggle { display: flex; }
-  .nav-cta { margin-left: auto; }
 }
 @media (max-width: 720px) {
   .section, .method-pin { padding: 90px 0; }
