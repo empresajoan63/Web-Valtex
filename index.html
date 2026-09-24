@@ -43,9 +43,15 @@
       </nav>
       <div class="nav-right">
         <div class="lang-switch" role="group" aria-label="Idioma / Language">
-          <button type="button" data-lang="es" aria-pressed="true">ES</button>
-          <button type="button" data-lang="ca" aria-pressed="false">CA</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="es" aria-pressed="true" aria-label="Español" title="Español">
+            <svg viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice"><rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/></svg>
+          </button>
+          <button type="button" data-lang="ca" aria-pressed="false" aria-label="Català" title="Català">
+            <svg viewBox="0 0 9 9" preserveAspectRatio="none"><rect width="9" height="9" fill="#fcdd09"/><path d="M0 1.5h9M0 3.5h9M0 5.5h9M0 7.5h9" stroke="#da121a" stroke-width="1"/></svg>
+          </button>
+          <button type="button" data-lang="en" aria-pressed="false" aria-label="English" title="English">
+            <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"><clipPath id="ukT"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" clip-path="url(#ukT)" stroke="#c8102e" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/></svg>
+          </button>
         </div>
         <a href="#contacto" class="btn btn-primary btn-sm magnetic nav-cta"><span data-i18n="nav.cta">Auditoría gratis</span></a>
         <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false"><span></span><span></span></button>
@@ -420,8 +426,10 @@
             <div class="field"><input type="tel" id="f-tel" name="telefono" placeholder=" " /><label for="f-tel" data-i18n="form.phone">Teléfono</label></div>
             <div class="field full"><textarea id="f-msg" name="mensaje" rows="3" placeholder=" "></textarea><label for="f-msg" data-i18n="form.msg">¿Qué te gustaría automatizar?</label></div>
             <label class="check full"><input type="checkbox" required /> <span data-i18n="form.privacy">Acepto la política de privacidad</span></label>
-            <button type="submit" class="btn btn-primary full magnetic"><span data-i18n="form.submit">Quiero mi auditoría</span></button>
+            <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off" /></div>
+            <button type="submit" class="btn btn-primary full magnetic" id="formSubmit"><span data-i18n="form.submit">Quiero mi auditoría</span></button>
             <p class="form-ok full" id="formOk" hidden data-i18n="form.ok">¡Gracias! Te contactaremos en menos de 24 h.</p>
+            <p class="form-error full" id="formError" hidden data-i18n="form.error">No se ha podido enviar. Escríbenos a <a href="mailto:info@valtex.agency">info@valtex.agency</a> o llámanos al <a href="tel:+34665080707">+34 665 080 707</a>.</p>
           </form>
         </div>
       </div>
@@ -429,6 +437,19 @@
   </main>
 
   <footer class="footer">
+    <div class="container footer-contact">
+      <p class="eyebrow" data-i18n="footer.talk">Hablemos</p>
+      <a href="mailto:info@valtex.agency" class="big-contact">
+        <span class="bc-label" data-i18n="footer.write">Escríbenos</span>
+        <span class="bc-value">info@valtex.agency</span>
+        <span class="bc-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="tel:+34665080707" class="big-contact">
+        <span class="bc-label" data-i18n="footer.call">Llámanos</span>
+        <span class="bc-value">+34 665 080 707</span>
+        <span class="bc-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#top" class="logo">VALTE<span>X</span></a>

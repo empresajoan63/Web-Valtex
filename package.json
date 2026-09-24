@@ -1,0 +1,7 @@
+{
+  "name": "valtex-web",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^10.0.10"
+  }
+}

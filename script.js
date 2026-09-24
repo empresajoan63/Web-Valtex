@@ -218,11 +218,37 @@
     });
   });
 
-  /* ---------- Formulario (pendiente de conectar a un servicio) ---------- */
-  document.getElementById("contactForm").addEventListener("submit", (e) => {
+  /* ---------- Formulario: se envía a info@valtex.agency vía /api/contact ---------- */
+  const form = document.getElementById("contactForm");
+  const formOk = document.getElementById("formOk");
+  const formError = document.getElementById("formError");
+  const submitLabel = document.querySelector("#formSubmit span");
+  const SENDING = { es: "Enviando…", ca: "Enviant…", en: "Sending…" };
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    e.target.reset();
-    document.getElementById("formOk").hidden = false;
+    const btn = document.getElementById("formSubmit");
+    const original = submitLabel.innerHTML;
+    formOk.hidden = true;
+    formError.hidden = true;
+    btn.disabled = true;
+    submitLabel.textContent = SENDING[document.documentElement.lang] || SENDING.es;
+    const data = Object.fromEntries(new FormData(form));
+    data.idioma = document.documentElement.lang;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error(res.status);
+      form.reset();
+      formOk.hidden = false;
+    } catch (err) {
+      formError.hidden = false;
+    } finally {
+      btn.disabled = false;
+      submitLabel.innerHTML = original;
+    }
   });
 
   /* ---------- Tarjetas que animan sus gráficos al entrar ---------- */

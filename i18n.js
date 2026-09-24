@@ -165,6 +165,10 @@ const TRANSLATIONS = {
     "form.submit": "Vull la meva auditoria",
     "form.ok": "Gràcies! Et contactarem en menys de 24 h.",
 
+    "form.error": 'No s\'ha pogut enviar. Escriu-nos a <a href="mailto:info@valtex.agency">info@valtex.agency</a> o truca\'ns al <a href="tel:+34665080707">+34 665 080 707</a>.',
+    "footer.talk": "Parlem",
+    "footer.write": "Escriu-nos",
+    "footer.call": "Truca'ns",
     "footer.tagline": "Automatització amb IA per a hotels.",
     "footer.nav": "Navegació",
     "footer.contact": "Contacte",
@@ -337,6 +341,10 @@ const TRANSLATIONS = {
     "form.submit": "Get my audit",
     "form.ok": "Thank you! We'll get in touch within 24 h.",
 
+    "form.error": 'Something went wrong. Email us at <a href="mailto:info@valtex.agency">info@valtex.agency</a> or call <a href="tel:+34665080707">+34 665 080 707</a>.',
+    "footer.talk": "Let's talk",
+    "footer.write": "Email us",
+    "footer.call": "Call us",
     "footer.tagline": "AI automation for hotels.",
     "footer.nav": "Navigation",
     "footer.contact": "Contact",
