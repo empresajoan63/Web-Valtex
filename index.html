@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALTEX | Automatización con IA para hoteles</title>
+  <meta name="description" content="VALTEX es la agencia especializada en automatizaciones con inteligencia artificial para hoteles: recepción 24/7, reservas directas, reseñas, upselling y operaciones conectadas a tu PMS." />
+  <meta property="og:title" content="VALTEX | Automatización con IA para hoteles" />
+  <meta property="og:description" content="Tu hotel atiende, vende y se organiza solo, 24/7. Automatizaciones con IA diseñadas para hoteleros." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#05050a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2305050a'/%3E%3Cpath d='M8 9l8 15 8-15' stroke='%2319e6d4' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-logo">VALTE<span>X</span></div>
+    <div class="preloader-bar"><span id="preloaderBar"></span></div>
+    <div class="preloader-count" id="preloaderCount">0</div>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" aria-label="VALTEX inicio">
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#19e6d4"/><stop offset="1" stop-color="#b56bff"/></linearGradient></defs><path d="M5 7l11 19L27 7" stroke="url(#lg)" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="7" r="2.4" fill="#b56bff"/></svg>
+        VALTE<span>X</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#metodo">Método</a>
+        <a href="#departamentos">Áreas</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#contacto" class="btn btn-primary btn-sm magnetic nav-cta"><span>Auditoría gratis</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <canvas id="particles" aria-hidden="true"></canvas>
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <a href="#servicios" class="pill hero-fade">
+          <span class="pill-tag">Nuevo</span> Agentes de voz para recepción <span class="arrow">→</span>
+        </a>
+        <h1 class="hero-title" data-split>Tu hotel atiende, vende y se organiza <em class="grad">solo. 24/7.</em></h1>
+        <p class="lead hero-fade">Agentes de IA y automatizaciones conectadas a tu PMS, WhatsApp y canales de venta. Tu equipo deja las tareas repetitivas y se centra en lo que importa: el huésped.</p>
+        <div class="hero-ctas hero-fade">
+          <a href="#contacto" class="btn btn-primary magnetic"><span>Solicitar auditoría gratuita</span></a>
+          <a href="#como-funciona" class="btn btn-ghost magnetic"><span>Ver cómo funciona</span></a>
+        </div>
+
+        <!-- Mockup -->
+        <div class="hero-visual" id="heroVisual">
+          <div class="window" data-depth="0.4">
+            <div class="window-bar"><i></i><i></i><i></i><span>VALTEX Concierge · WhatsApp</span><b class="live">● En vivo</b></div>
+            <div class="chat" id="heroChat">
+              <div class="msg in">Hi! Do you have a double room for 12–14 Oct? 🌊</div>
+              <div class="msg out">Yes! Deluxe Sea View is available for 2 nights at €148/night, breakfast included. Shall I book it for you?</div>
+              <div class="msg in">Perfect, go ahead!</div>
+              <div class="msg out typing"><span></span><span></span><span></span></div>
+              <div class="msg sys">✓ Reserva creada en PMS &nbsp;·&nbsp; ✓ Pago enviado &nbsp;·&nbsp; ✓ Housekeeping avisado</div>
+            </div>
+          </div>
+          <div class="float-card fc-1" data-depth="1.2">
+            <div class="fc-icon t"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg></div>
+            <div><small>Respuesta media</small><strong>8 s</strong></div>
+          </div>
+          <div class="float-card fc-2" data-depth="0.9">
+            <div class="fc-icon l"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4l8 8-8 8"/></svg></div>
+            <div><small>Reserva directa</small><strong>Sin comisión</strong></div>
+          </div>
+          <div class="float-card fc-3" data-depth="1.5">
+            <div class="fc-icon t"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+            <div><small>Idioma detectado</small><strong>English</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat reveal-up"><strong><span data-count="24">0</span>/7</strong><span>atención al huésped, también de madrugada</span></div>
+        <div class="stat reveal-up"><strong>&lt;<span data-count="10">0</span> s</strong><span>tiempo de respuesta en WhatsApp y web</span></div>
+        <div class="stat reveal-up"><strong>+<span data-count="30">0</span></strong><span>idiomas atendidos por el mismo agente</span></div>
+        <div class="stat reveal-up"><strong><span data-count="0">0</span></strong><span>consultas sin responder fuera de horario</span></div>
+      </div>
+    </section>
+
+    <!-- INTEGRACIONES -->
+    <section class="marquee-section" aria-label="Integraciones">
+      <p class="marquee-title">Conectamos con las herramientas que ya usas</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>WhatsApp Business</span><span>Mews</span><span>Cloudbeds</span><span>Oracle Opera</span><span>SiteMinder</span><span>Booking.com</span><span>Google Hotel Ads</span>
+          <span>WhatsApp Business</span><span>Mews</span><span>Cloudbeds</span><span>Oracle Opera</span><span>SiteMinder</span><span>Booking.com</span><span>Google Hotel Ads</span>
+        </div>
+      </div>
+      <div class="marquee reverse">
+        <div class="marquee-track">
+          <span>Stripe</span><span>HubSpot</span><span>n8n</span><span>Make</span><span>Claude</span><span>Gmail</span><span>Google Sheets</span><span>Slack</span>
+          <span>Stripe</span><span>HubSpot</span><span>n8n</span><span>Make</span><span>Claude</span><span>Gmail</span><span>Google Sheets</span><span>Slack</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFIESTO -->
+    <section class="section manifesto">
+      <div class="container">
+        <p class="eyebrow">El problema</p>
+        <p class="manifesto-text" id="manifesto">Cada mensaje sin contestar es una reserva que se va a otro hotel. Recepción saturada, correos que esperan hasta mañana y comisiones de OTA que se comen tu margen. La IA no sustituye a tu equipo: le devuelve el tiempo.</p>
+      </div>
+    </section>
+
+    <!-- COMPARATIVA -->
+    <section class="section compare-section">
+      <div class="container compare">
+        <div class="compare-col bad reveal-left">
+          <h3>Sin automatizar</h3>
+          <ul class="list-x">
+            <li>Consultas nocturnas perdidas</li>
+            <li>Reservas vía OTA con comisión</li>
+            <li>Upselling solo si hay tiempo</li>
+            <li>Reseñas sin respuesta</li>
+          </ul>
+        </div>
+        <div class="vs" aria-hidden="true">VS</div>
+        <div class="compare-col good reveal-right">
+          <h3>Con <span class="grad">VALTEX</span></h3>
+          <ul class="list-check">
+            <li>Respuesta inmediata en cualquier idioma</li>
+            <li>Más venta directa desde web y WhatsApp</li>
+            <li>Upgrades y extras ofrecidos a cada huésped</li>
+            <li>Reputación online gestionada a diario</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS (BENTO) -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Servicios</p>
+          <h2 data-split>Automatizaciones pensadas para la operativa hotelera</h2>
+        </div>
+        <div class="bento">
+          <article class="card tilt span-4">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.8A8 8 0 1121 12z"/></svg></div>
+              <h3>Concierge IA 24/7</h3>
+              <p>Un agente en WhatsApp, web y email que resuelve dudas, recomienda y reserva en el idioma del huésped.</p>
+              <div class="mini-chat">
+                <div class="b in">¿A qué hora es el desayuno?</div>
+                <div class="b out">De 7:30 a 11:00 en la terraza ☀️ ¿Te reservo mesa?</div>
+              </div>
+            </div>
+          </article>
+          <article class="card tilt span-2">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 18v-6a3 3 0 013-3h12a3 3 0 013 3v6M3 18h18M3 18v2M21 18v2M7 9V6h10v3"/></svg></div>
+              <h3>Motor de venta directa</h3>
+              <p>Convierte conversaciones en reservas con enlace de pago, sin OTAs.</p>
+            </div>
+          </article>
+          <article class="card tilt span-2">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg></div>
+              <h3>Pre check-in automático</h3>
+              <p>Datos, documentación y preferencias antes de la llegada. Adiós a las colas.</p>
+            </div>
+          </article>
+          <article class="card tilt span-2">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg></div>
+              <h3>Gestión de reseñas</h3>
+              <p>Respuestas personalizadas en Google, Booking y TripAdvisor, con alertas.</p>
+              <div class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+          <article class="card tilt span-2">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
+              <h3>Upselling inteligente</h3>
+              <p>Upgrades, late check-out, spa o traslados en el momento justo.</p>
+            </div>
+          </article>
+          <article class="card tilt span-3">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114.9-4M20 12a8 8 0 01-14.9 4M19 3v5h-5M5 21v-5h5"/></svg></div>
+              <h3>Agente de voz</h3>
+              <p>Atiende llamadas de reservas y consultas frecuentes con voz natural y pasa a tu equipo lo importante.</p>
+              <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+          <article class="card tilt span-3">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M10 21V4M15 21v-8M20 21V7"/></svg></div>
+              <h3>Informes para dirección</h3>
+              <p>Ocupación, ingresos por canal y satisfacción resumidos cada mañana en tu email o WhatsApp.</p>
+              <div class="bars" aria-hidden="true"><i style="--h:40%"></i><i style="--h:65%"></i><i style="--h:50%"></i><i style="--h:80%"></i><i style="--h:70%"></i><i style="--h:95%"></i><i style="--h:85%"></i></div>
+            </div>
+          </article>
+          <article class="card tilt span-3">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9"/></svg></div>
+              <h3>Operaciones conectadas</h3>
+              <p>Housekeeping, mantenimiento y F&amp;B reciben las tareas al instante desde el PMS o el propio huésped.</p>
+            </div>
+          </article>
+          <article class="card tilt span-3">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg></div>
+              <h3>Email marketing y fidelización</h3>
+              <p>Campañas post-estancia, cumpleaños y recuperación de reservas abandonadas, en piloto automático.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Cómo funciona</p>
+          <h2 data-split>Un cerebro de IA en el centro de tu hotel</h2>
+          <p class="muted narrow">Recibe todo lo que entra por tus canales, entiende qué necesita cada huésped y ejecuta la acción en tus sistemas.</p>
+        </div>
+        <div class="flow" id="flow">
+          <div class="flow-col in">
+            <div class="node"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.8A8 8 0 1121 12z"/></svg>WhatsApp</div>
+            <div class="node"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>Email</div>
+            <div class="node"><svg viewBox="0 0 24 24"><path d="M3 5h18v11H8l-5 4z"/></svg>Web chat</div>
+            <div class="node"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>Llamadas</div>
+          </div>
+          <div class="flow-lines"><span></span><span></span><span></span><span></span></div>
+          <div class="flow-core">
+            <div class="core-ring"></div>
+            <div class="core-ring r2"></div>
+            <div class="core-inner"><strong>VALTEX</strong><small>AI ENGINE</small></div>
+          </div>
+          <div class="flow-lines"><span></span><span></span><span></span><span></span></div>
+          <div class="flow-col out">
+            <div class="node"><svg viewBox="0 0 24 24"><path d="M4 5h16v15H4zM4 10h16M9 3v4M15 3v4"/></svg>Reserva en PMS</div>
+            <div class="node"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 10h18M7 15h3"/></svg>Cobro con Stripe</div>
+            <div class="node"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8M20 12v7H4V5h11"/></svg>Tarea a housekeeping</div>
+            <div class="node"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg>Aviso al equipo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO (scroll horizontal) -->
+    <section class="method" id="metodo">
+      <div class="method-pin">
+        <div class="container method-head">
+          <p class="eyebrow">Método VALTEX</p>
+          <h2>De la idea a la IA funcionando <span class="grad">en 4 pasos</span></h2>
+        </div>
+        <div class="method-track" id="methodTrack">
+          <div class="step">
+            <span class="num">01</span>
+            <h3>Auditoría</h3>
+            <p>Analizamos tu operativa, canales y herramientas para detectar dónde se pierde tiempo y dinero.</p>
+            <div class="step-line"></div>
+          </div>
+          <div class="step">
+            <span class="num">02</span>
+            <h3>Diseño</h3>
+            <p>Definimos los flujos, el tono de tu marca y las reglas del agente junto a tu equipo.</p>
+            <div class="step-line"></div>
+          </div>
+          <div class="step">
+            <span class="num">03</span>
+            <h3>Implementación</h3>
+            <p>Conectamos la IA a tu PMS y canales, y la probamos con casos reales antes del lanzamiento.</p>
+            <div class="step-line"></div>
+          </div>
+          <div class="step">
+            <span class="num">04</span>
+            <h3>Optimización</h3>
+            <p>Medimos resultados cada mes y ajustamos para que el sistema rinda cada vez mejor.</p>
+            <div class="step-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPARTAMENTOS (tabs) -->
+    <section class="section" id="departamentos">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Por departamento</p>
+          <h2 data-split>Qué gana cada área de tu hotel</h2>
+        </div>
+        <div class="tabs reveal-up">
+          <div class="tab-list" role="tablist">
+            <button class="tab active" role="tab" aria-selected="true" data-tab="0">Recepción</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="1">Reservas</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="2">Housekeeping</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="3">F&amp;B</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="4">Marketing</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="5">Dirección</button>
+            <span class="tab-indicator" id="tabIndicator"></span>
+          </div>
+          <div class="tab-panels">
+            <div class="tab-panel active" role="tabpanel">
+              <h3>Menos llamadas repetitivas, check-ins más rápidos</h3>
+              <ul class="list-check"><li>Respuestas automáticas a preguntas frecuentes</li><li>Pre check-in digital con documentación</li><li>Derivación inteligente al personal</li></ul>
+            </div>
+            <div class="tab-panel" role="tabpanel">
+              <h3>Cada consulta respondida y convertida</h3>
+              <ul class="list-check"><li>Disponibilidad y precios en tiempo real</li><li>Enlace de pago en la misma conversación</li><li>Seguimiento de presupuestos no cerrados</li></ul>
+            </div>
+            <div class="tab-panel" role="tabpanel">
+              <h3>Habitaciones y peticiones sincronizadas</h3>
+              <ul class="list-check"><li>Tareas automáticas según check-outs</li><li>Peticiones del huésped enviadas al instante</li><li>Incidencias de mantenimiento priorizadas</li></ul>
+            </div>
+            <div class="tab-panel" role="tabpanel">
+              <h3>Restaurante y room service sin fricción</h3>
+              <ul class="list-check"><li>Reservas de mesa por WhatsApp</li><li>Pedidos a habitación con carta digital</li><li>Avisos de alergias y preferencias</li></ul>
+            </div>
+            <div class="tab-panel" role="tabpanel">
+              <h3>Campañas y reseñas que trabajan solas</h3>
+              <ul class="list-check"><li>Emails post-estancia personalizados</li><li>Solicitud de reseñas en el mejor momento</li><li>Recuperación de reservas abandonadas</li></ul>
+            </div>
+            <div class="tab-panel" role="tabpanel">
+              <h3>Datos claros para decidir cada día</h3>
+              <ul class="list-check"><li>Resumen diario de ocupación e ingresos</li><li>Alertas de reseñas negativas</li><li>Análisis de conversaciones y demanda</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Por qué VALTEX</p>
+          <h2 data-split>Especialistas en hoteles, no en todo</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why card tilt"><div class="card-glow"></div><div class="card-content"><span class="why-num">01</span><h3>100% hotelero</h3><p>Hablamos tu idioma: ocupación, RevPAR, OTAs y temporadas.</p></div></div>
+          <div class="why card tilt"><div class="card-glow"></div><div class="card-content"><span class="why-num">02</span><h3>Datos protegidos</h3><p>Sistemas diseñados según el RGPD y con acceso restringido.</p></div></div>
+          <div class="why card tilt"><div class="card-glow"></div><div class="card-content"><span class="why-num">03</span><h3>Humano en el control</h3><p>El agente sabe cuándo pasar la conversación a tu equipo.</p></div></div>
+          <div class="why card tilt"><div class="card-glow"></div><div class="card-content"><span class="why-num">04</span><h3>Sin permanencia</h3><p>Trabajamos por resultados. Si no te aporta, no te atamos.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 data-split>Resolvemos tus dudas</h2>
+          <p class="muted">¿No encuentras tu respuesta? <a href="#contacto" class="link">Escríbenos</a>.</p>
+        </div>
+        <div class="faq">
+          <div class="faq-item reveal-up"><button class="faq-q" aria-expanded="false">¿La IA sustituye a mi personal de recepción?<i></i></button><div class="faq-a"><div><p>No. Se encarga de las tareas repetitivas y de las horas en las que no hay nadie, para que tu equipo se centre en la atención presencial y en los casos que requieren criterio humano.</p></div></div></div>
+          <div class="faq-item reveal-up"><button class="faq-q" aria-expanded="false">¿Funciona con mi PMS?<i></i></button><div class="faq-a"><div><p>Trabajamos con los PMS más habituales. En la auditoría revisamos tu sistema y te confirmamos qué integraciones son posibles.</p></div></div></div>
+          <div class="faq-item reveal-up"><button class="faq-q" aria-expanded="false">¿Cuánto tarda la implementación?<i></i></button><div class="faq-a"><div><p>Un primer agente en WhatsApp o web puede estar operativo en pocas semanas. Los proyectos más completos se lanzan por fases para ver resultados desde el principio.</p></div></div></div>
+          <div class="faq-item reveal-up"><button class="faq-q" aria-expanded="false">¿Qué pasa si el agente no sabe responder?<i></i></button><div class="faq-a"><div><p>Deriva la conversación a tu equipo con todo el contexto, por el canal que prefieras, para que nadie tenga que repetir nada.</p></div></div></div>
+          <div class="faq-item reveal-up"><button class="faq-q" aria-expanded="false">¿Es seguro para los datos de mis huéspedes?<i></i></button><div class="faq-a"><div><p>Diseñamos cada sistema siguiendo el RGPD, con accesos limitados y proveedores que ofrecen garantías de protección de datos.</p></div></div></div>
+          <div class="faq-item reveal-up"><button class="faq-q" aria-expanded="false">¿Sirve para hoteles pequeños?<i></i></button><div class="faq-a"><div><p>Sí. Adaptamos el alcance al tamaño del establecimiento, desde hoteles boutique y apartamentos turísticos hasta cadenas.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="cta-box reveal-scale">
+          <div class="cta-orb" aria-hidden="true"></div>
+          <div class="cta-copy">
+            <p class="eyebrow">Auditoría gratuita · 30 min</p>
+            <h2>¿Listo para que tu hotel trabaje <span class="grad">en piloto automático</span>?</h2>
+            <p class="muted">Te mostramos qué procesos de tu hotel puedes automatizar primero y cuánto tiempo recuperaría tu equipo.</p>
+            <ul class="list-check small"><li>Sin compromiso</li><li>Respuesta en menos de 24 h</li><li>Propuesta adaptada a tu hotel</li></ul>
+          </div>
+          <form class="form" id="contactForm">
+            <div class="field"><input type="text" id="f-nombre" name="nombre" placeholder=" " required /><label for="f-nombre">Nombre</label></div>
+            <div class="field"><input type="text" id="f-hotel" name="hotel" placeholder=" " required /><label for="f-hotel">Hotel</label></div>
+            <div class="field"><input type="email" id="f-email" name="email" placeholder=" " required /><label for="f-email">Email</label></div>
+            <div class="field"><input type="tel" id="f-tel" name="telefono" placeholder=" " /><label for="f-tel">Teléfono</label></div>
+            <div class="field full"><textarea id="f-msg" name="mensaje" rows="3" placeholder=" "></textarea><label for="f-msg">¿Qué te gustaría automatizar?</label></div>
+            <label class="check full"><input type="checkbox" required /> Acepto la política de privacidad</label>
+            <button type="submit" class="btn btn-primary full magnetic"><span>Quiero mi auditoría</span></button>
+            <p class="form-ok full" id="formOk" hidden>¡Gracias! Te contactaremos en menos de 24 h.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="logo">VALTE<span>X</span></a>
+        <p class="muted">Automatización con IA para hoteles.</p>
+      </div>
+      <nav>
+        <strong>Navegación</strong>
+        <a href="#servicios">Servicios</a>
+        <a href="#metodo">Método</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <nav>
+        <strong>Legal</strong>
+        <a href="#">Aviso legal</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Cookies</a>
+      </nav>
+    </div>
+    <div class="footer-word" aria-hidden="true">VALTEX</div>
+    <p class="copy container">© <span id="year"></span> VALTEX. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
