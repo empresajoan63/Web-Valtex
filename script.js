@@ -267,9 +267,13 @@
     return el.querySelectorAll(".word-inner");
   };
 
+  // Tras cambiar de idioma, la pantalla de carga pasa casi sin verse
+  let quick = false;
+  try { quick = sessionStorage.getItem("valtex-quick") === "1"; sessionStorage.removeItem("valtex-quick"); } catch (e) {}
+
   const loader = { v: 0 };
   gsap.to(loader, {
-    v: 100, duration: 1.4, ease: "power2.inOut",
+    v: 100, duration: quick ? 0.2 : 1.4, ease: "power2.inOut",
     onUpdate: () => { count.textContent = Math.round(loader.v); bar.style.width = `${loader.v}%`; },
     onComplete: () => {
       gsap.to(preloader, {

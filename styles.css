@@ -131,6 +131,18 @@ em { font-style: normal; }
 .nav-links { display: flex; gap: 0.3rem; font-size: 0.9rem; }
 .nav-links a { padding: 0.5rem 0.9rem; border-radius: 999px; color: var(--muted); transition: color 0.3s, background 0.3s; }
 .nav-links a:hover { color: var(--text); background: rgba(255, 255, 255, 0.06); }
+.nav-right { display: flex; align-items: center; gap: 0.6rem; }
+.lang-switch {
+  display: flex; padding: 3px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border);
+}
+.lang-switch button {
+  border: 0; background: none; cursor: pointer; color: var(--muted);
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+  padding: 0.4rem 0.6rem; border-radius: 999px; transition: color 0.3s, background 0.3s;
+}
+.lang-switch button:hover { color: var(--text); }
+.lang-switch button[aria-pressed="true"] { background: var(--grad); color: var(--black); box-shadow: 0 0 14px rgba(181, 107, 255, 0.45); }
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 6px; padding: 12px; }
 .nav-toggle span { width: 22px; height: 2px; background: var(--text); display: block; transition: transform 0.3s var(--ease); }
 .nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
