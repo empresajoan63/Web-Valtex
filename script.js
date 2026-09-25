@@ -134,7 +134,7 @@
   const canvas = document.getElementById("particles");
   if (canvas && !reduceMotion) {
     const ctx = canvas.getContext("2d");
-    const colors = ["25,230,212", "181,107,255"];
+    const colors = ["46,230,214", "180,76,255"];
     let w, h, dpr, points = [], mouse = { x: -9999, y: -9999 }, running = true;
     const resize = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
