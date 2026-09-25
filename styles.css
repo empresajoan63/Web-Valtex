@@ -63,7 +63,7 @@ em { font-style: normal; }
   display: grid; place-items: center; align-content: center; gap: 1.5rem;
 }
 .preloader-logo { font-family: var(--font-head); font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 700; letter-spacing: 0.12em; }
-.preloader-logo span, .logo > span { color: var(--lilac); text-shadow: 0 0 20px var(--lilac); }
+.preloader-logo span, .logo span { color: var(--lilac); text-shadow: 0 0 20px var(--lilac); }
 .preloader-bar { width: 220px; height: 2px; background: var(--border); overflow: hidden; border-radius: 2px; }
 .preloader-bar span { display: block; height: 100%; width: 0; background: var(--grad); box-shadow: 0 0 12px var(--turquoise); }
 .preloader-count { font-family: var(--font-head); color: var(--muted); font-size: 0.85rem; letter-spacing: 0.2em; }
@@ -127,6 +127,7 @@ em { font-style: normal; }
   transition: background 0.3s;
 }
 .nav.scrolled .nav-inner { background: rgba(12, 12, 21, 0.85); }
+.logo-word { font-weight: inherit; }
 .logo { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-head); font-weight: 700; font-size: 1.35rem; letter-spacing: 0.1em; }
 .nav-links { display: flex; gap: 0.3rem; font-size: 0.9rem; }
 .nav-links a { padding: 0.5rem 0.9rem; border-radius: 999px; color: var(--muted); transition: color 0.3s, background 0.3s; }
@@ -139,12 +140,12 @@ em { font-style: normal; }
 .lang-switch { gap: 2px; }
 .lang-switch button {
   display: grid; place-items: center; border: 0; background: none; cursor: pointer;
-  padding: 6px 7px; border-radius: 999px; transition: background 0.3s;
+  padding: 7px 9px; border-radius: 999px; transition: background 0.3s;
 }
 .lang-switch svg {
-  width: 22px; height: 15px; border-radius: 3px; display: block;
+  width: 30px; height: 20px; border-radius: 4px; display: block;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
-  opacity: 0.5; filter: saturate(0.6); transition: opacity 0.3s, filter 0.3s, transform 0.3s var(--ease);
+  opacity: 0.65; filter: saturate(0.75); transition: opacity 0.3s, filter 0.3s, transform 0.3s var(--ease);
 }
 .lang-switch button:hover svg { opacity: 0.9; filter: none; transform: scale(1.08); }
 .lang-switch button[aria-pressed="true"] { background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(25, 230, 212, 0.45), 0 0 14px rgba(181, 107, 255, 0.35); }
